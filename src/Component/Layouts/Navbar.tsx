@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo1.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const [scrolled, setScrolled] = useState(false);
-const [bounce, setBounce] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      if (!scrolled) {
-        setBounce(true); // trigger bounce once
-        setTimeout(() => setBounce(false), 400); // remove after animation
-      }
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [scrolled]);
 
   const BrandLogo = ({ size }: { size: string }) => (
     <div
@@ -105,7 +87,7 @@ useEffect(() => {
           </NavLink>
 
           <NavLink
-            to="/Services"
+            to="/service"
             className={({ isActive }) =>
               isActive
                 ? "border-b-2 border-[#c5a059] pb-1"
@@ -125,7 +107,9 @@ useEffect(() => {
           >
             Certificates
           </NavLink>
+          
         </ul>
+        
 
         <div className="lg:hidden flex items-center gap-4">
           <BrandLogo size="w-10 h-10" />

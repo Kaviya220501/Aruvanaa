@@ -6,9 +6,10 @@ import fruits from '../../assets/fruits.png'
 import sun from '../../assets/sun.png'
 import dates from '../../assets/dates.png'
 import rice from '../../assets/rice.png'
-
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col min-h-screen font-sans">
       <Navbar />
@@ -38,10 +39,14 @@ export default function Home() {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#c5a059] hover:bg-[#b48e48] text-[#1a3c1a] px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2">
+                <button
+                onClick={() => navigate("/products")}
+                 className="bg-[#c5a059] hover:bg-[#b48e48] text-[#1a3c1a] px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2">
                   Explore Commodities <span>→</span>
                 </button>
-                <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold transition-all">
+                <button
+                 onClick={() => navigate("/about")}
+                 className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold transition-all">
                   Our Story
                 </button>
               </div>
@@ -76,7 +81,7 @@ export default function Home() {
                   and last-mile delivery in Dubai—ensuring unmatched quality and reliability.
                 </p>
               </div>
-              <Link to="/services" className="inline-flex items-center gap-2 text-[#2d5a27] font-bold mt-8 hover:gap-4 transition-all">
+              <Link to="/service" className="inline-flex items-center gap-2 text-[#2d5a27] font-bold mt-8 hover:gap-4 transition-all">
                 Discover our Integrated Services <span>→</span>
               </Link>
             </div>
@@ -96,7 +101,9 @@ export default function Home() {
                   ensuring a diverse and reliable supply for our partners.
                 </p>
               </div>
-              <button className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#1a3c1a] px-8 py-3 rounded-full font-bold transition-all">
+              <button 
+              onClick={() => navigate("/products")}
+               className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#1a3c1a] px-8 py-3 rounded-full font-bold transition-all">
                 View All Products
               </button>
             </div>
