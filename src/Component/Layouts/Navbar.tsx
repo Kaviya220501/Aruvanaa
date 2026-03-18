@@ -1,115 +1,183 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo1.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const [scrolled, setScrolled] = useState(false);
+const [bounce, setBounce] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      if (!scrolled) {
+        setBounce(true); // trigger bounce once
+        setTimeout(() => setBounce(false), 400); // remove after animation
+      }
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [scrolled]);
+
+  const BrandLogo = ({ size }: { size: string }) => (
+    <div
+      className={`${size} rounded-full border border-gray-100 overflow-hidden shadow-sm`}
+    >
+      <img src={logo} alt="Logo" className="w-full h-full object-cover" />
+    </div>
+  );
+
   return (
-    <div className="w-full">
-      <div className="hidden md:flex bg-green-800 text-white text-sm justify-between items-center px-10 py-2">
+    <nav className="w-full font-sans sticky top-0 z-[999] bg-white">
+      <div className="hidden lg:flex bg-[#1a3c1a] text-white text-[13px] justify-between items-center px-12 py-2.5">
         <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-phone"></i>
-            <span>+91 88616 50007 (IN)</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-phone"></i>
-            <span>+971 588267177 (UAE)</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-envelope"></i>
-            <span>info@aruvanaa.com</span>
-          </div>
+          <span className="flex items-center gap-2">
+            <i className="fa-solid fa-phone text-[#c5a059]"></i> +91 88616 50007
+            (IN)
+          </span>
+          <span className="flex items-center gap-2">
+            <i className="fa-solid fa-phone text-[#c5a059]"></i> +971 588267177
+            (UAE)
+          </span>
+          <span className="flex items-center gap-2">
+            <i className="fa-solid fa-envelope text-[#c5a059]"></i>{" "}
+            info@aruvanaa.com
+          </span>
         </div>
-
-        {/* Right */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-globe"></i>
-            <span>Trade Beyond Borders</span>
-          </div>
-
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-1 rounded-full text-sm font-medium">
-            Download Brochure
+        <div className="flex items-center gap-6">
+          <span className="flex items-center gap-2 italic opacity-90">
+            <i className="fa-solid fa-globe"></i> Trade Beyond Borders
+          </span>
+          <button className="bg-[#2d5a27] hover:bg-[#3d7a35] px-4 py-1.5 rounded-md flex items-center gap-2 transition-colors">
+            <i className="fa-solid fa-circle-arrow-down"></i> Download Brochure
           </button>
         </div>
       </div>
 
-      {/* 🔽 Main Navbar */}
-      <div className="flex items-center justify-between px-6 md:px-10 py-4 bg-white shadow-sm">
-        {/* Logo */}
-        <div>
-          <h1 className="text-green-800 font-bold text-lg md:text-xl">
+      <div className="flex items-center justify-between px-6 lg:px-12 py-4 bg-white shadow-sm relative z-[110] border-b border-gray-100">
+        <div className="flex flex-col">
+          <h1 className="text-[#1a3c1a] font-bold text-2xl leading-none tracking-tight">
             ARUVANAA
           </h1>
-          <p className="text-xs text-gray-500">COMMODITY TRADING</p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold mt-1">
+            Commodity Trading
+          </p>
         </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-          <li className="border-b-2 border-green-700 pb-1">
-            <Link to="/">Home</Link>
-          </li>
+        <ul className="hidden lg:flex items-center gap-10 text-[#1a3c1a] font-semibold text-[15px]">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-[#c5a059] pb-1"
+                : "hover:text-[#c5a059]"
+            }
+          >
+            Home
+          </NavLink>
 
-          <li className="hover:text-green-700">
-            <Link to="/about">About Us</Link>
-          </li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-[#c5a059] pb-1"
+                : "hover:text-[#c5a059]"
+            }
+          >
+            About Us
+          </NavLink>
 
-          <li className="hover:text-green-700">
-            <Link to="/products">Products</Link>
-          </li>
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-[#c5a059] pb-1"
+                : "hover:text-[#c5a059]"
+            }
+          >
+            Products
+          </NavLink>
 
-          <li className="hover:text-green-700">
-            <Link to="/services">Integrated Services</Link>
-          </li>
+          <NavLink
+            to="/Services"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-[#c5a059] pb-1"
+                : "hover:text-[#c5a059]"
+            }
+          >
+            Integrated Services
+          </NavLink>
 
-          <li className="hover:text-green-700">
-            <Link to="/certificates">Certificates</Link>
-          </li>
+          <NavLink
+            to="/certificates"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-[#c5a059] pb-1"
+                : "hover:text-[#c5a059]"
+            }
+          >
+            Certificates
+          </NavLink>
         </ul>
 
-        {/* Right Side (Desktop) */}
-        <div className="hidden md:flex items-center gap-4">
-          <button className="bg-yellow-500 hover:bg-yellow-600 px-6 py-2 rounded-full font-semibold">
-            Contact Us
+        <div className="lg:hidden flex items-center gap-4">
+          <BrandLogo size="w-10 h-10" />
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-[#1a3c1a] ml-2"
+          >
+            <i
+              className={`fa-solid ${open ? "fa-xmark" : "fa-bars"} text-2xl`}
+            ></i>
           </button>
-
-          <div className="w-12 h-12 rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm">
-            <img
-              src="/logo.png"
-              alt="logo"
-              className="w-10 h-10 object-contain rounded-full"
-            />
-          </div>
         </div>
 
-        <div className="md:hidden">
-          <button onClick={() => setOpen(!open)}>
-            {open ? (
-              <i className="fa-solid fa-xmark text-xl"></i>
-            ) : (
-              <i className="fa-solid fa-bars text-xl"></i>
-            )}
-          </button>
+        <div className="hidden lg:block">
+          <BrandLogo size="w-16 h-16" />
         </div>
       </div>
 
-     
-      {open && (
-        <div className="md:hidden bg-white px-6 py-4 shadow-md space-y-4">
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/services">Integrated Services</Link>
-          <Link to="/certificates">Certificates</Link>
-
-          <button className="w-full bg-yellow-500 py-2 rounded-full font-semibold">
-            Contact Us
+      <div
+        className={`absolute left-0 w-full bg-white transition-all duration-500 ease-in-out overflow-hidden border-b shadow-xl lg:hidden ${
+          open
+            ? "max-h-[500px] opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+        style={{ top: "100%" }}
+      >
+        <div className="flex flex-col px-8 py-8 gap-6">
+          <NavLink to="/about" onClick={() => setOpen(false)}>
+            About Us
+          </NavLink>
+          <NavLink to="/products" onClick={() => setOpen(false)}>
+            Products
+          </NavLink>
+          <NavLink to="/services" onClick={() => setOpen(false)}>
+            Integrated Services
+          </NavLink>
+          <NavLink to="/certificates" onClick={() => setOpen(false)}>
+            Certificates
+          </NavLink>
+          <button className="mt-4 bg-[#1a3c1a]  text-white py-3.5 rounded-xl font-bold text-base flex justify-center items-center gap-2">
+            Contact Us <i className="fa-solid fa-chevron-right text-xs"></i>
           </button>
         </div>
-      )}
-    </div>
+        <div className="px-6 pb-6 text-sm text-gray-500 space-y-2">
+          <p className="flex items-center gap-2">
+            <i className="fa-solid fa-phone"></i> +91 88616 50007
+          </p>
+          <p className="flex items-center gap-2">
+            <i className="fa-solid fa-envelope"></i> info@aruvanaa.com
+          </p>
+        </div>
+      </div>
+    </nav>
   );
 }

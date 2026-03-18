@@ -1,14 +1,15 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import logo from '../../assets/logo1.png'
 
 export const Footer = () => {
   return (
-    <footer className="bg-green-900 text-green-100 px-6 md:px-16 py-12">
+    <footer className="bg-[#1A5B2A] text-green-100 px-6 md:px-16 py-12">
       <div className="grid md:grid-cols-4 gap-10">
         
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-              <img src="/logo.png" alt="logo" className="w-7 h-7" />
+              <img src={logo} alt="logo" className="w-7 h-7" />
             </div>
             <h1 className="text-2xl font-serif tracking-wide text-[#C7A84D]">
               ARUVANAA
