@@ -40,7 +40,7 @@ export default function Home() {
               
               <div className="flex flex-wrap gap-4">
                 <button
-                onClick={() => navigate("/products")}
+                 onClick={() => navigate("/products")}
                  className="bg-[#c5a059] hover:bg-[#b48e48] text-[#1a3c1a] px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2">
                   Explore Commodities <span>→</span>
                 </button>
@@ -56,7 +56,7 @@ export default function Home() {
 
         
         <section className="relative z-20 -mt-16 container mx-auto px-6 lg:px-12">
-          <div className="bg-white rounded-3xl shadow-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8 border border-gray-100">
+          <div className="bg-white rounded-3xl shadow-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 border border-gray-100">
             <StatItem icon="fa-globe" title="India & UAE" sub="GLOBAL REACH" />
             <StatItem icon="fa-shield-halved" title="10+" sub="LICENSED CATEGORIES" />
             <StatItem icon="fa-ship" title="End-to-End" sub="LOGISTICS" />
@@ -101,9 +101,7 @@ export default function Home() {
                   ensuring a diverse and reliable supply for our partners.
                 </p>
               </div>
-              <button 
-              onClick={() => navigate("/products")}
-               className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#1a3c1a] px-8 py-3 rounded-full font-bold transition-all">
+              <button className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#1a3c1a] px-8 py-3 rounded-full font-bold transition-all">
                 View All Products
               </button>
             </div>
@@ -137,8 +135,8 @@ function StatItem({ icon, title, sub }: { icon: string, title: string, sub: stri
       <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-[#2d5a27]">
         <i className={`fa-solid ${icon} text-2xl`}></i>
       </div>
-      <h3 className="text-[30px] font-serif text-[#1a3c1a] font-bold">{title}</h3>
-      <p className="text-[15px] tracking-widest text-gray-400 font-bold uppercase mt-1">{sub}</p>
+      <h3 className="text-3xl font-serif text-[#1a3c1a] font-bold">{title}</h3>
+      <p className="text-[10px] tracking-widest text-gray-400 font-bold uppercase mt-1">{sub}</p>
     </div>
   );
 }
