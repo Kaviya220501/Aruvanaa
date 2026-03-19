@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import { Mail, Phone, MapPin, Globe, Download, ArrowLeft } from "lucide-react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo1.png";
 import fruits from "../../assets/fruits.png";

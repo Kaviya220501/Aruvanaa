@@ -6,7 +6,7 @@ import Product from './Component/Pages/Product';
 import Service from './Component/Pages/Service';
 import Certificate from './Component/Pages/Certificate';
 import Contact from './Component/Pages/Contact';
-import Brochure from './Component/Pages/Brochure';
+import Brochure from  './Component/Pages/Brochure'
 
 
 export default function App() {
