@@ -1,4 +1,3 @@
-import React from "react";
 import cake from "../../assets/cake.jpeg";
 import snacks from "../../assets/snacks.jpeg";
 import coke from "../../assets/coke.jpeg";
