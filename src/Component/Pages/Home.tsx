@@ -135,10 +135,10 @@ function StatItem({ icon, title, sub }: { icon: string, title: string, sub: stri
   return (
     <div className="flex flex-col items-center text-center p-4 border-r last:border-0 border-gray-100 md:odd:border-r-0 lg:odd:border-r lg:even:border-r lg:last:border-0">
       <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-[#2d5a27]">
-        <i className={`fa-solid ${icon} text-xl`}></i>
+        <i className={`fa-solid ${icon} text-2xl`}></i>
       </div>
-      <h3 className="text-2xl font-serif text-[#1a3c1a] font-bold">{title}</h3>
-      <p className="text-[10px] tracking-widest text-gray-400 font-bold uppercase mt-1">{sub}</p>
+      <h3 className="text-[30px] font-serif text-[#1a3c1a] font-bold">{title}</h3>
+      <p className="text-[15px] tracking-widest text-gray-400 font-bold uppercase mt-1">{sub}</p>
     </div>
   );
 }

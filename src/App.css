@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-container {
+    width: 794px;
+    margin: 0 auto;
+  }
+
+  .page {
+    width: 794px;
+    height: 1123px; /* A4 exact */
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    display: block;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  /* Remove unwanted effects */
+  * {
+    box-shadow: none !important;
+  }
+}

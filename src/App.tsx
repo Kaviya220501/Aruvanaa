@@ -6,6 +6,7 @@ import Product from './Component/Pages/Product';
 import Service from './Component/Pages/Service';
 import Certificate from './Component/Pages/Certificate';
 import Contact from './Component/Pages/Contact';
+import Brochure from './Component/Pages/Brochure';
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/service" element={<Service />} />
       <Route path="/certificates" element={<Certificate />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="/brochure" element={<Brochure />} />
     </Routes>
   )
 }

@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo1.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
-
+    const navigate = useNavigate();
 
   const BrandLogo = ({ size }: { size: string }) => (
     <div
-      className={`${size} rounded-full border border-gray-100 overflow-hidden shadow-sm`}
+    onClick={() => navigate("/")}
+      className={`${size} rounded-full border border-gray-100 overflow-hidden shadow-sm transition-all duration-300 transform hover:scale-105 cursor-pointer`}
     >
       <img src={logo} alt="Logo" className="w-full h-full object-cover" />
     </div>
@@ -36,7 +36,9 @@ export default function Navbar() {
           <span className="flex items-center gap-2 italic opacity-90">
             <i className="fa-solid fa-globe"></i> Trade Beyond Borders
           </span>
-          <button className="bg-[#2d5a27] hover:bg-[#3d7a35] px-4 py-1.5 rounded-md flex items-center gap-2 transition-colors">
+          <button 
+          onClick={() => navigate("/brochure")}
+          className="bg-[#2d5a27] hover:bg-[#3d7a35] px-4 py-1.5 rounded-md flex items-center gap-2 transition-colors">
             <i className="fa-solid fa-circle-arrow-down"></i> Download Brochure
           </button>
         </div>
@@ -107,13 +109,18 @@ export default function Navbar() {
           >
             Certificates
           </NavLink>
-          
+
+          <button 
+           onClick={() => navigate("/contact")}
+          className="bg-[#c0a049] cursor-pointer hover:bg-[#F0B100] px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+            Contact Us
+          </button>
         </ul>
-        
 
         <div className="lg:hidden flex items-center gap-4">
           <BrandLogo size="w-10 h-10" />
           <button
+
             onClick={() => setOpen(!open)}
             className="text-[#1a3c1a] ml-2"
           >
@@ -137,6 +144,9 @@ export default function Navbar() {
         style={{ top: "100%" }}
       >
         <div className="flex flex-col px-8 py-8 gap-6">
+           <NavLink to="/" onClick={() => setOpen(false)}>
+            Home
+          </NavLink>
           <NavLink to="/about" onClick={() => setOpen(false)}>
             About Us
           </NavLink>

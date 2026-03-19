@@ -1,4 +1,3 @@
-import React from "react";
 import aboutImg from "../../assets/about-img.avif";
 import { Target, Eye } from "lucide-react";
 import Navbar from "../Layouts/Navbar";
