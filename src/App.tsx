@@ -13,13 +13,13 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="/products" element={<Product/>} />
-      <Route path="/service" element={<Service />} />
-      <Route path="certificates" element={<Certificate />} />
-      <Route path="contact" element={<Contact />} />
-      <Route path="/brochure" element={<Brochure />} />
+    <Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+<Route path="/products" element={<Product />} />
+<Route path="/service" element={<Service />} />
+<Route path="/certificates" element={<Certificate />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="/brochure" element={<Brochure />} />
     </Routes>
   )
 }
