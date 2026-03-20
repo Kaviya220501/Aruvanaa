@@ -9,7 +9,7 @@ export default function Navbar() {
   const BrandLogo = ({ size }: { size: string }) => (
     <div
     onClick={() => navigate("/")}
-      className={`${size} rounded-full border border-gray-100 overflow-hidden shadow-sm transition-all duration-300 transform hover:scale-105 cursor-pointer`}
+      className={`${size} rounded-full border  border-gray-100 overflow-hidden  shadow-sm shadow-[#c0a049]/30 hover:shadow-lg hover:shadow-[#c0a049]/60 transition-all duration-300 transform hover:scale-105 cursor-pointer`}
     >
       <img src={logo} alt="Logo" className="w-full h-full object-cover" />
     </div>
@@ -38,7 +38,7 @@ export default function Navbar() {
           </span>
           <button 
           onClick={() => navigate("/brochure")}
-          className="bg-[#2d5a27] hover:bg-[#3d7a35] px-4 py-1.5 rounded-md flex items-center gap-2 transition-colors">
+          className="bg-[#c0a049] hover:bg-[#8f752e] backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 transition-colors">
             <i className="fa-solid fa-circle-arrow-down"></i> Download Brochure
           </button>
         </div>
@@ -46,7 +46,7 @@ export default function Navbar() {
 
       <div className="flex items-center justify-between px-6 lg:px-12 py-4 bg-white shadow-sm relative z-[110] border-b border-gray-100">
         <div className="flex flex-col">
-          <h1 className="text-[#1a3c1a] font-bold text-2xl leading-none tracking-tight">
+          <h1 className="text-[#1a3c1a] font-bold text-2xl leading-none tracking-tight  " style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             ARUVANAA
           </h1>
           <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold mt-1">
