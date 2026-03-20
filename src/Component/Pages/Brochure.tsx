@@ -24,27 +24,20 @@ const downloadPDF = () => {
 
   return (
     <div className=" bg-gray-100 min-h-screen pb-10">
-    <div className="bg-white border-b px-3 sm:px-6 py-3 w-[full] flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 sticky top-0 z-50 no-print">
-  
-  
-  <button
-    onClick={() => navigate("/")}
-    className="flex items-center gap-2 text-gray-600 hover:text-black text-sm sm:text-base self-start sm:self-auto"
-  >
-    <ArrowLeft size={18} />
-    <span className="">Back to Website</span>
-  </button>
-
-  
-  <button
-    onClick={downloadPDF}
-    className="bg-[#1a4d2e] text-white px-4 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all text-sm sm:text-base w-full sm:w-auto"
-  >
-    <Download size={18} />
-    Download PDF
-  </button>
-
-</div>
+      <div className="bg-white border-b p-4 flex justify-between items-center sticky   no-print top-0 z-50">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 text-gray-600 hover:text-black"
+        >
+          <ArrowLeft size={18} /> Back to Website
+        </button>
+        <button
+          onClick={downloadPDF}
+          className="bg-[#1a4d2e] text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-opacity-90 transition-all"
+        >
+          <Download size={18} /> Download PDF
+        </button>
+      </div>
 
       <div
         
@@ -190,7 +183,7 @@ const downloadPDF = () => {
           </div>
 
           {/*page 2 */}
-          <div ref={page2Ref} className="page w-[794px] h-[1223px] border-t-2 border-gray-200 bg-white relative ">
+          <div ref={page2Ref} className="page min-h-[1123px] border-t-2 border-gray-200 bg-white relative ">
             <div className="bg-green-800 text-white p-6 flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <h1 className="text-xl font-bold">ARUVANAA</h1>
