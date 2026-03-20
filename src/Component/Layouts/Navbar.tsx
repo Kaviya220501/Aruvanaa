@@ -46,11 +46,11 @@ export default function Navbar() {
 
       <div className="flex items-center justify-between px-6 lg:px-12 py-4 bg-white shadow-sm relative z-[110] border-b border-gray-100">
         <div className="flex flex-col">
-          <h1 className="text-[#1a3c1a] font-bold text-2xl leading-none tracking-tight  " style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <h1 className="text-[#1a3c1a] font-extrabold text-2xl leading-none tracking-tight  " style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             ARUVANAA
           </h1>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold mt-1">
-            Commodity Trading
+          <p className="text-[12px] text-gray-500 mt-1 " style={{ fontFamily: "ui-sans-serif " }}>
+            Trade Beyond Borders
           </p>
         </div>
 
