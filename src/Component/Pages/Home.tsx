@@ -1,61 +1,22 @@
 import { Footer } from "../Layouts/Footer";
 import Navbar from "../Layouts/Navbar";
 import { Link } from "react-router-dom";
-import hero from '../../assets/hero.png'
 import fruits from '../../assets/fruits.png'
 import sun from '../../assets/sun.png'
 import dates from '../../assets/dates.png'
 import rice from '../../assets/rice.png'
-import { useNavigate } from "react-router-dom";
+import HeroSlider from "../HeroSection/HeroSlider";
 
 export default function Home() {
-  const navigate = useNavigate();
   return (
     <div className="flex flex-col min-h-screen font-sans">
       <Navbar />
 
       <main className="flex-grow">
-        <section 
-          className="relative min-h-[85vh] flex items-center bg-cover bg-center text-white"
-          style={{ backgroundImage: `url(${hero})` }}
-        >
-          
-          <div className="absolute inset-0 bg-black/30"></div>
-          
-          <div className="container mx-auto px-6 lg:px-12 relative z-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 mb-6">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
-                <span className="text-sm font-medium">Connecting India to the UAE & Beyond</span>
-              </div>
+            
+          <HeroSlider/>
               
-              <h1 className="text-5xl lg:text-7xl font-serif mb-6 leading-tight">
-                Trade Beyond <span className="text-[#c5a059] italic">Borders.</span>
-              </h1>
-              
-              <p className="text-lg opacity-90 mb-10 leading-relaxed max-w-2xl">
-                Aruvanaa bridges the gap between India's rich agricultural heritage and global markets. 
-                We ensure quality, transparency, and trust in every transaction.
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <button
-                 onClick={() => navigate("/products")}
-                 className="bg-[#c5a059] hover:bg-[#b48e48] text-[#1a3c1a] px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2">
-                  Explore Commodities <span>→</span>
-                </button>
-                <button
-                 onClick={() => navigate("/about")}
-                 className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold transition-all">
-                  Our Story
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        
-        <section className="relative z-20 -mt-16 container mx-auto px-6 lg:px-12">
+        <section className=" container mx-auto px-6 my-6 lg:px-12">
           <div className="bg-white rounded-3xl shadow-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 border border-gray-100">
             <StatItem icon="fa-globe" title="India & UAE" sub="GLOBAL REACH" />
             <StatItem icon="fa-shield-halved" title="10+" sub="LICENSED CATEGORIES" />
