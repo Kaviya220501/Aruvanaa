@@ -94,7 +94,7 @@ export default  function Contact () {
               </div>
               <div className="flex gap-4 items-center">
                 <Mail className="text-[#1a4d2e] shrink-0" size={20} />
-                <p>info@aruvanaa.com</p>
+                <p>managerind@aruvanaa.com</p>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default  function Contact () {
             <div className="space-y-4 text-gray-600">
               <div className="flex gap-4">
                 <MapPin className="text-[#1a4d2e] shrink-0" size={24} />
-                <p><strong>ARUVANAA GLOBAL MERCATO</strong><br/>AL KHABEESI BLDG - Office No6,<br/>Al Khabeesi, Dubai - UAE</p>
+                <p><strong>ARUVANAA GLOBAL MERCATO</strong><br/> ARUVANAA GLOBAL MERCATO <br />Fruits and Vegetables Trading LLC</p>
               </div>
               <div className="flex gap-4 items-center">
                 <Phone className="text-[#1a4d2e] shrink-0" size={20} />
@@ -116,7 +116,7 @@ export default  function Contact () {
               </div>
               <div className="flex gap-4 items-center">
                 <Mail className="text-[#1a4d2e] shrink-0" size={20} />
-                <p>info@aruvanaa.com</p>
+                <p>manageruae@aruvanaa.com </p>
               </div>
             </div>
           </div>

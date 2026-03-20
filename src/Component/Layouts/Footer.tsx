@@ -61,6 +61,11 @@ export const Footer = () => {
             <Phone size={16} className="text-[#C7A84D]" />
             <span>+91 88616 50007</span>
           </div>
+
+           <div className="flex items-center gap-2 text-sm">
+            <Mail size={16} className="text-[#C7A84D]"/>
+            <span>managerind@aruvanaa.com</span>
+          </div>
         </div>
 
         <div>
@@ -71,9 +76,7 @@ export const Footer = () => {
           <div className="flex gap-2 mb-3">
             <MapPin size={18} className="mt-1 text-[#C7A84D]" />
             <p className="text-sm leading-6">
-              ARUVANAA GLOBAL MERCATO <br />
-              AL KHABEESI BLDG - Office No6, <br />
-              Al Khabeesi, Dubai - UAE
+              ARUVANAA GLOBAL MERCATO <br /> Fruits and Vegetables <br />Trading LLC
             </p>
           </div>
 
@@ -84,7 +87,7 @@ export const Footer = () => {
 
           <div className="flex items-center gap-2 text-sm">
             <Mail size={16} className="text-[#C7A84D]"/>
-            <span>info@aruvanaa.com</span>
+            <span>manageruae@aruvanaa.com </span>
           </div>
         </div>
       </div>

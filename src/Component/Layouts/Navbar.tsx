@@ -29,7 +29,7 @@ export default function Navbar() {
           </span>
           <span className="flex items-center gap-2">
             <i className="fa-solid fa-envelope text-[#c5a059]"></i>{" "}
-            info@aruvanaa.com
+            managerind@aruvanaa.com
           </span>
         </div>
         <div className="flex items-center gap-6">
@@ -153,7 +153,7 @@ export default function Navbar() {
           <NavLink to="/products" onClick={() => setOpen(false)}>
             Products
           </NavLink>
-          <NavLink to="/services" onClick={() => setOpen(false)}>
+          <NavLink to="/service" onClick={() => setOpen(false)}>
             Integrated Services
           </NavLink>
           <NavLink to="/certificates" onClick={() => setOpen(false)}>
