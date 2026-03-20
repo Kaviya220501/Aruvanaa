@@ -153,7 +153,7 @@ export default function Navbar() {
           <NavLink to="/products" onClick={() => setOpen(false)}>
             Products
           </NavLink>
-          <NavLink to="/services" onClick={() => setOpen(false)}>
+          <NavLink to="/service" onClick={() => setOpen(false)}>
             Integrated Services
           </NavLink>
           <NavLink to="/certificates" onClick={() => setOpen(false)}>
