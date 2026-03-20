@@ -1,6 +1,6 @@
 import { Footer } from "../Layouts/Footer";
 import Navbar from "../Layouts/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import fruits from '../../assets/fruits.png'
 import sun from '../../assets/sun.png'
 import dates from '../../assets/dates.png'
@@ -8,6 +8,7 @@ import rice from '../../assets/rice.png'
 import HeroSlider from "../HeroSection/HeroSlider";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col min-h-screen font-sans">
       <Navbar />
@@ -62,7 +63,9 @@ export default function Home() {
                   ensuring a diverse and reliable supply for our partners.
                 </p>
               </div>
-              <button className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#1a3c1a] px-8 py-3 rounded-full font-bold transition-all">
+              <button
+              onClick={() => navigate("/products")}
+               className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#1a3c1a] px-8 py-3 rounded-full font-bold transition-all">
                 View All Products
               </button>
             </div>
