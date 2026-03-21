@@ -159,7 +159,9 @@ export default function Navbar() {
           <NavLink to="/certificates" onClick={() => setOpen(false)}>
             Certificates
           </NavLink>
-          <button className="mt-4 bg-[#1a3c1a]  text-white py-3.5 rounded-xl font-bold text-base flex justify-center items-center gap-2">
+          <button 
+          onClick={() => navigate("/contact")}
+          className="mt-4 bg-[#1a3c1a]  text-white py-3.5 rounded-xl font-bold text-base flex justify-center items-center gap-2">
             Contact Us <i className="fa-solid fa-chevron-right text-xs"></i>
           </button>
         </div>
