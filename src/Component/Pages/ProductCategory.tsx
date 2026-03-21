@@ -55,30 +55,28 @@ export default function ProductCategory() {
 
   const specs = product.specs;
 
-  const specRows = specs ? [
-    { label: "Product Name & Grade", value: specs.productNameGrade },
-    { label: "Item Code", value: specs.itemCode },
-    { label: "Gross Weight", value: specs.grossWeight },
-    { label: "Net Weight", value: specs.netWeight },
-    { label: "Number of Packages", value: specs.numberOfPackages },
-    { label: "Product Color", value: specs.productColor },
-    { label: "Product Quality", value: specs.productQuality },
-    { label: "Quantity", value: specs.quantity },
-    specs.size ? { label: "Size", value: specs.size } : null,
-    specs.count ? { label: "Count", value: specs.count } : null,
-    specs.weight ? { label: "Weight per Unit", value: specs.weight } : null,
-    specs.cbm ? { label: "CBM", value: specs.cbm } : null,
-    { label: "Packing Date", value: specs.packingDate },
-    { label: "Shipper Information", value: specs.shipperInfo },
-  ].filter(Boolean) as { label: string; value: string | undefined }[] : [];
+  // const specRows = specs ? [
+  //   { label: "Product Name & Grade", value: specs.productNameGrade },
+  //   { label: "Item Code", value: specs.itemCode },
+  //   { label: "Gross Weight", value: specs.grossWeight },
+  //   { label: "Net Weight", value: specs.netWeight },
+  //   { label: "Number of Packages", value: specs.numberOfPackages },
+  //   { label: "Product Color", value: specs.productColor },
+  //   { label: "Product Quality", value: specs.productQuality },
+  //   { label: "Quantity", value: specs.quantity },
+  //   specs.size ? { label: "Size", value: specs.size } : null,
+  //   specs.count ? { label: "Count", value: specs.count } : null,
+  //   specs.weight ? { label: "Weight per Unit", value: specs.weight } : null,
+  //   specs.cbm ? { label: "CBM", value: specs.cbm } : null,
+  //   { label: "Packing Date", value: specs.packingDate },
+  //   { label: "Shipper Information", value: specs.shipperInfo },
+  // ].filter(Boolean) as { label: string; value: string | undefined }[] : [];
 
   return (
     <div>
       <Navbar />
 
-      {/* ── HERO BANNER ───────────────────────────────────────────────────── */}
       <div className="bg-green-900 px-6 md:px-16 py-10">
-        {/* breadcrumb */}
         <div className="max-w-5xl mx-auto flex items-center flex-wrap gap-1.5 text-[#CCDBD0] text-xs mb-4">
           <button onClick={goAllCommodities} className="hover:text-white transition-colors">All Commodities</button>
           <span className="opacity-40">›</span>
@@ -90,7 +88,6 @@ export default function ProductCategory() {
         </div>
       </div>
 
-      {/* ── MAIN CONTENT ──────────────────────────────────────────────────── */}
       <div className="bg-gray-100 py-12 px-6 md:px-16">
         <div
           className="max-w-5xl mx-auto"
@@ -158,11 +155,11 @@ export default function ProductCategory() {
                 </p>
               </div>
 
-              {/* Divider */}
+             
               <div className="border-t border-gray-100 my-6" />
 
               {/* Specifications Table */}
-              {specRows.length > 0 && (
+              {/* {specRows.length > 0 && (
                 <div>
                   <h2 className="text-green-800 font-semibold text-sm uppercase tracking-wider mb-4">
                     Product Specifications
@@ -189,12 +186,12 @@ export default function ProductCategory() {
                     </table>
                   </div>
                 </div>
-              )}
+              )} */}
 
-              {/* Divider */}
+              
               <div className="border-t border-gray-100 my-6" />
 
-              {/* Shipper info footer */}
+             
               <div className="bg-green-50 rounded-xl p-4">
                 <p className="text-green-900 text-xs font-semibold mb-1">Shipper / Exporter</p>
                 <p className="text-green-700 text-xs">{specs?.shipperInfo ?? "Aruvanaa Exports, Tamil Nadu, India"}</p>
